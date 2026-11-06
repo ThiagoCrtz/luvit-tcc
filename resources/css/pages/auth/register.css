@@ -1,0 +1,370 @@
+
+.register-section {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    background: #0c0d10;
+}
+
+.register-visual {
+    position: relative;
+    background: radial-gradient(
+            ellipse at top left,
+            rgba(225, 29, 72, 0.2),
+            transparent 50%
+        ),
+        radial-gradient(
+            ellipse at bottom right,
+            rgba(244, 63, 94, 0.15),
+            transparent 50%
+        ),
+        #0c0d10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.bg-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.shape {
+    position: absolute;
+    opacity: 0.12;
+    animation: float 8s ease-in-out infinite;
+}
+
+.shape:nth-child(1) {
+    top: 15%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.shape:nth-child(2) {
+    top: 60%;
+    right: 15%;
+    animation-delay: -3s;
+}
+
+.shape:nth-child(3) {
+    bottom: 20%;
+    left: 25%;
+    animation-delay: -6s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.12;
+    }
+    33% {
+        transform: translateY(-25px) rotate(120deg);
+        opacity: 0.18;
+    }
+    66% {
+        transform: translateY(-15px) rotate(240deg);
+        opacity: 0.15;
+    }
+}
+
+.brand-visual {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.brand-logo-large {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 1.5rem;
+    background-color: #ff0f43;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.3rem;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+
+.brand-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #fffeff;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+}
+
+.brand-tagline {
+    color: #9ca3af;
+    font-size: 1.1rem;
+}
+
+.register-form-side {
+    background: rgba(17, 24, 39, 0.6);
+    backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    overflow-y: auto; 
+}
+
+.register-container {
+    width: 100%;
+    max-width: 420px;
+}
+
+.brand-header {
+    text-align: center;
+    margin-bottom: 1.5rem; 
+}
+
+.welcome-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.4rem; 
+}
+
+.welcome-subtitle {
+    color: #b1b4b9;
+    font-size: 0.9rem;
+}
+
+.enhanced-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.form-step {
+    display: flex; 
+    flex-direction: column;
+    gap: 0.75rem; 
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-label {
+    display: block;
+    margin-bottom: 0.3rem; 
+    font-weight: 600;
+    color: #e5e7eb;
+    font-size: 0.85rem;
+}
+
+.enhanced-input {
+    width: 100%;
+    padding: 0.65rem 0.65rem; 
+    background: rgba(31, 41, 55, 0.8);
+    border: 1px solid rgba(75, 85, 99, 0.6);
+    border-radius: 0.5rem;
+    color: #ffffff;
+    font-size: 0.9rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.enhanced-input[type="password"] {
+    padding-right: 2.5rem;
+}
+
+.enhanced-input:focus,
+.enhanced-input:hover {
+    outline: none;
+    border-color: rgba(75, 85, 99, 0.6);
+    box-shadow: none;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 0.75rem;
+    top: 2.25rem; /* AJUSTADO */
+    background: none;
+    border: none;
+    color: rgba(156, 163, 175, 0.7);
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 0.25rem;
+}
+
+.password-toggle:hover {
+    color: #e11d48;
+}
+
+.enhanced-btn {
+    width: 100%;
+    padding: 0.75rem 1rem; 
+    border: none;
+    border-radius: 0.5rem;
+    color: rgb(235, 231, 231);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.enhanced-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.enhanced-btn:hover {
+    transform: translateY(-2px);
+}
+
+.enhanced-btn:hover::before {
+    left: 100%;
+}
+
+.auth-links {
+    text-align: center;
+    margin-top: 1.25rem; 
+}
+
+.auth-link {
+    color: rgba(156, 163, 175, 0.8);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.auth-link:hover {
+    color: #b7b9b8;
+}
+
+.primary-link {
+    color: #e11d48;
+    font-weight: 600;
+}
+
+.alert {
+    padding: 0.65rem 0.85rem;
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.alert-error {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #fca5a5;
+}
+
+.alert-success {
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    color: #86efac;
+}
+
+.step-indicator-bar {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem; 
+    padding: 0 1rem;
+}
+
+.step-line {
+    flex: 1;
+    height: 4px;
+    background-color: rgba(75, 85, 99, 0.6);
+    border-radius: 2px;
+    transition: background-color 0.4s ease;
+}
+
+.step-line.active {
+    background-color: #e11d48;
+}
+
+.profile-picture-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.profile-preview-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #e11d48;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.upload-label {
+    cursor: pointer;
+    background-color: rgba(31, 41, 55, 0.8);
+    color: #e5e7eb;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(75, 85, 99, 0.6);
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.upload-label:hover {
+    background-color: rgba(75, 85, 99, 0.4);
+    border-color: #e11d48;
+}
+
+.hidden-input {
+    display: none;
+}
+
+
+@media (max-width: 1024px) {
+    .register-section {
+        grid-template-columns: 1fr;
+        height: auto; 
+        min-height: 100vh;
+    }
+    
+    .register-visual {
+        display: none; 
+    }
+    
+    .register-form-side {
+        border-left: none;
+        padding: 1.5rem; 
+        min-height: 100vh; 
+        align-items: center; 
+    }
+}
+
+@media (max-width: 640px) {
+    .register-form-side {
+        padding: 1.5rem;
+    }
+    
+    .register-container {
+        max-width: 100%;
+    }
+    
+    .welcome-title {
+        font-size: 1.5rem;
+    }
+}
